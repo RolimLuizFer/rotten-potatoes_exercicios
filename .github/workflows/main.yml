@@ -20,7 +20,7 @@ jobs:
         uses: docker/build-push-action@v4.1.1
         with:
           context: ./home-broker/01-worker
-          file: .home-broker/01-worker/Dockerfile
+          file: ./home-broker/01-worker/Dockerfile
           push: true
           tags: |
             luizfernandogalvao/trader-worker:v${{github.run_number}}
