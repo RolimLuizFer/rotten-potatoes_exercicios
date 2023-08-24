@@ -11,9 +11,9 @@ jobs:
     steps:
       -  name: Checkout da base de código
          uses: actions/checkout@v3.6.0
-      - name: Autenticação do Docker hub
-        uses: docker/login-action@v2.2.0
-            with:
+      -  name: Autenticação do Docker hub
+         uses: docker/login-action@v2.2.0
+         with:
             username:  ${{ secrets.DOCKERHUB_USR }}
             password: ${{ secrets.DOCKERHUB_PWD }}
           
