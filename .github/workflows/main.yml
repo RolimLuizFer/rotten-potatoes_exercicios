@@ -29,8 +29,8 @@ jobs:
       - name: Construindo a imagem do api
         uses: docker/build-push-action@v4.1.1
         with:
-          context: .home-broker/02-api
-          file: .home-broker/02-api/Dockerfile
+          context: ./home-broker/02-api
+          file: ./home-broker/02-api/Dockerfile
           push: true
           tags: |
             luizfernandogalvao/trader-api:v${{github.run_number}}
@@ -39,8 +39,8 @@ jobs:
       - name: Construindo a imagem do frontend
         uses: docker/build-push-action@v4.1.1
         with:
-          context: .home-broker/03-frontend
-          file: .home-broker/03-frontend/Dockerfile
+          context: ./home-broker/03-frontend
+          file: ./home-broker/03-frontend/Dockerfile
           push: true
           tags: |
             luizfernandogalvao/trader-web:v${{github.run_number}}
