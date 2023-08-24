@@ -46,8 +46,8 @@ jobs:
             luizfernandogalvao/trader-web:v${{github.run_number}}
             luizfernandogalvao/trader-web:latest
           build-args: |
-              NEXT_PUBLIC_NEST_URL=
-              NEXT_PUBLIC_NEST_URL_API=
+              nest_url=
+              next_url_api=
               
         
   CD:
