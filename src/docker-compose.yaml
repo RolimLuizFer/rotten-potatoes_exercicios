@@ -1,0 +1,38 @@
+version: '3.8'
+
+volumes:
+  mongodb-volume:
+
+networks:
+  rotten-poatatoes-net:
+    driver: bridge
+
+services:
+  mongodb:
+    image: mongo
+    ports:
+    - 27017:27017
+    networks:
+      - rotten-poatatoes-net
+    volumes:
+      - mongodb-volume:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongouser 
+      MONGO_INITDB_ROOT_PASSWORD: mongopwd
+
+
+  rotten-poatatoes:
+    image: luizfernandogalvao/rotten-potatoes:v1
+    networks:
+      - rotten-poatatoes-net
+    ports:
+    -  5000:5000
+    environment:
+      MONGODB_HOST: mongodb
+      MONGODB_USERNAME: mongouser
+      MONGODB_PASSWORD: mongopwd 
+
+
+
+
+
